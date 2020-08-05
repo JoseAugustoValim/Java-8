@@ -26,7 +26,7 @@ public class QuadradoAsteriscos {
 		// * *
 		// ********************
 
-		// consiste em um while que apresenta todos asteriscos no indice 10 e 20
+		// consiste em um while que apresenta todos asteriscos no indice 1 e 20
 		// caso não seja ele irá mostrar espaço
 		
 		while (contador <= tamanho) {
