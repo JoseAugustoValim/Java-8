@@ -1,59 +1,59 @@
-package com.java8.capitulo5;
+package com.java8.capitulo5.questoes;
 
 public class AutoPolicy {
-
-	private int accountNumber; // número da conta da apólice
-	private String makeAndModel; // carro ao qual a apólice é aplicada
-	private String state; // abreviatura do estado com duas letras
-	// construtor
+	private int accountNumber;
+	private String makeAndModel;
+	private String state;
 
 	public AutoPolicy(int accountNumber, String makeAndModel, String state) {
 		this.accountNumber = accountNumber;
 		this.makeAndModel = makeAndModel;
-		this.state = state;
+		if (state == "CT" || state == "MA") {
+			this.state = state;
+		} else {
+			System.out.println("Incorreto");
+		}
 	}
 
-	// define o accountNumber
 	public void setAccountNumber(int accountNumber) {
 		this.accountNumber = accountNumber;
 	}
 
-	// retorna o accountNumber
 	public int getAccountNumber() {
 		return accountNumber;
 	}
 
-	// configura o makeAndModel
 	public void setMakeAndModel(String makeAndModel) {
 		this.makeAndModel = makeAndModel;
 	}
 
-	// retorna o makeAndModel
 	public String getMakeAndModel() {
 		return makeAndModel;
 	}
 
-	// define o estado
 	public void setState(String state) {
+
 		this.state = state;
+
 	}
 
-	// retorna o estado
 	public String getState() {
+
 		return state;
 	}
 
-	// método predicado é retornado se o estado tem seguros “sem culpa”
 	public boolean isNoFaultState() {
 		boolean noFaultState;
 
-		// determina se o estado tem seguros de automóvel “sem culpa”
-		switch (getState()) // obtém a abreviatura do estado do objeto AutoPolicy
-		{
+		switch (getState()) {
+		case "CT":
 		case "MA":
+		case "ME":
+		case "NH":
 		case "NJ":
 		case "NY":
 		case "PA":
+		case "VT":
 			noFaultState = true;
 			break;
 		default:
@@ -62,5 +62,4 @@ public class AutoPolicy {
 		}
 		return noFaultState;
 	}
-
 }
