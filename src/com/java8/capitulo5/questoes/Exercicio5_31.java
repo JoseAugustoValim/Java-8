@@ -6,7 +6,7 @@ public class Exercicio5_31 {
 
 	public static void menu() {
 		System.out.println("1 - Comecar");
-		System.out.println("2 - Encerrar");
+		System.out.println("0 - Encerrar");
 	}
 
 	public static void main(String[] args) {
